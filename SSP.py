@@ -30,7 +30,7 @@ class SSP():
 
     ###
 
-    def try_at_random(self, S, n, t):
+    def attempt_random(self, S, n, t):
         if (t == 0):
             return True
             print("Subset has correct sum")
@@ -38,7 +38,10 @@ class SSP():
             return False
             print("No subset has correct sum")
 
-        
+        if (S[n-1] > sum):
+            return instance.attempt_random(S, n-1, t)
+        else:
+            return instance.attempt_random(S, n-1, t or instance.attempt_random
         
   
 
